@@ -1,15 +1,10 @@
-import React from 'react';
+import React from "react";
 
-function WelcomeMessage () {
+function WelcomeMessage() {
   return (
     <div>
-      <h1>
-        Hello everyone, I am learning React at ALX!
-      </h1>
-
-      <p>
-        I am learning about JSX!
-      </p>
+      <h1>Hello everyone, I am learning React at ALX!</h1>
+      <p>I am learning about JSX!</p>
     </div>
   );
 }
