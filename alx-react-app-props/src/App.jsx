@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import WelcomeMessage from "./components/WelcomeMessage";
 import UserProfile from "./components/UserProfile";
 import Counter from "./components/Counter";
-import UserContext from "./UserContext";
+import UserContext from "../UserContext";
 import ProfilePage from "./components/ProfilePage";
 
 function App() {
