@@ -13,7 +13,12 @@ import ProfilePage from "./components/ProfilePage";
 
 function App() {
   const [count, setCount] = useState(0);
-  const userData = { name: "Jane Doe", email: "jane.doe@example" };
+  const userData = {
+    name: "Jane Doe",
+    email: "jane.doe@example",
+    age: "23",
+    bio: "Loves hiking and photography",
+  };
 
   return (
     <>
@@ -24,7 +29,7 @@ function App() {
           <ProfilePage userData={userData} />
         </UserContext.Provider>
         <WelcomeMessage />
-        <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
+        <UserProfile userData={userData} />
         <Counter />
         <Footer />
       </main>
