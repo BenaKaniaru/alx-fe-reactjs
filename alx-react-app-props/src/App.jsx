@@ -8,15 +8,21 @@ import Footer from "./components/Footer";
 import WelcomeMessage from "./components/WelcomeMessage";
 import UserProfile from "./components/UserProfile";
 import Counter from "./components/Counter";
+import UserContext from "./UserContext";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
   const [count, setCount] = useState(0);
+  const userData = { name: "Jane Doe", email: "jane.doe@example" };
 
   return (
     <>
       <main>
         <Header />
         <MainContent />
+        <UserContext.Provider value={userData}>
+          <ProfilePage userData={userData} />
+        </UserContext.Provider>
         <WelcomeMessage />
         <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
         <Counter />
