@@ -1,13 +1,11 @@
-import React from 'react'
+import React from "react";
 
- function MainContent () {
+function MainContent() {
   return (
-    <main>
-      <p>
-        I love to visit New York, Paris, and Tokyo.
-      </p>
+    <main style={{ color: "red" }}>
+      <p>I love to visit New York, Paris, and Tokyo.</p>
     </main>
-  )
-};
+  );
+}
 
 export default MainContent;

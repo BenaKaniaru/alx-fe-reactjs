@@ -1,17 +1,16 @@
 import React from "react";
 
-cont
-
-function UserProfile({ persons }) {
-
-  
+function UserProfile(props) {
+  // const { persons } = props;
   return (
-    <div>
+    <div style={{ border: "1px solid green", padding: "10px", margin: "10px" }}>
       <ul>
-        {persons.map((person) => {
-          <li>
-            {person.name} {person.bio} {person.age} {person.emoji}
-          </li>;
+        {props.persons.map((person) => {
+          return (
+            <li style={{ color: "blue" }}>
+              {person.name} {person.bio} {person.age} {person.emoji}
+            </li>
+          );
         })}
       </ul>
     </div>

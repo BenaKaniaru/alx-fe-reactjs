@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-function Header () {
+function Header() {
   return (
-    <header>
-      <h1>
-        My Favorite Cities
-      </h1>
+    <header
+      style={{ backGroundColor: "navy", color: "white", textAlign: "center" }}
+    >
+      <h1>My Favorite Cities</h1>
     </header>
-  )
+  );
 }
 
 export default Header;
