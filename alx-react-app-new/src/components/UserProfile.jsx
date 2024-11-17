@@ -7,9 +7,13 @@ function UserProfile(props) {
       <ul>
         {props.persons.map((person) => {
           return (
-            <li style={{ color: "blue" }}>
-              {person.name} {person.bio} {person.age} {person.emoji}
-            </li>
+            <>
+              <h2 style={{ color: "blue" }}>{person.name}</h2>
+              <p>
+                Age: <span style={{ fontWeight: "bold" }}>{person.age}</span>
+              </p>
+              <p>Bio: {person.bio}</p>
+            </>
           );
         })}
       </ul>
