@@ -7,13 +7,13 @@ function UserProfile(props) {
       <ul>
         {props.persons.map((person) => {
           return (
-            <>
+            <div key={person.name}>
               <h2 style={{ color: "blue" }}>{person.name}</h2>
               <p>
                 Age: <span style={{ fontWeight: "bold" }}>{person.age}</span>
               </p>
               <p>Bio: {person.bio}</p>
-            </>
+            </div>
           );
         })}
       </ul>
