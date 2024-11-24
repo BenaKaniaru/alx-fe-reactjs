@@ -1,6 +1,6 @@
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query"; // Import necessary React Query components
-import PostsComponent from "./PostsComponent"; // Import your PostsComponent
+import PostsComponent from "./components/PostsComponent"; // Import your PostsComponent
 
 // Create a query client
 const queryClient = new QueryClient();
