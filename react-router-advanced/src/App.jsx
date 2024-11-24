@@ -1,16 +1,20 @@
+// src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProtectedRoute from "./ProtectedRoute";
+import Profile from "./components/Profile";
+import ProfileDetails from "./components/ProfileDetails";
+import ProfileSettings from "./components/ProfileSettings";
+import Post from "./components/Post";
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/profile"
-          element={<ProtectedRoute element={<Profile />} />}
-        />
+        <Route path="/profile" element={<Profile />}>
+          <Route path="details" element={<ProfileDetails />} />
+          <Route path="settings" element={<ProfileSettings />} />
+        </Route>
         <Route path="/post/:id" element={<Post />} />
       </Routes>
     </Router>
@@ -18,12 +22,5 @@ const App = () => {
 };
 
 const Home = () => <h2>Home Page</h2>;
-
-const Profile = () => <h2>Profile Page</h2>;
-
-const Post = () => {
-  const { id } = useParams();
-  return <h2>Post ID: {id}</h2>;
-};
 
 export default App;
