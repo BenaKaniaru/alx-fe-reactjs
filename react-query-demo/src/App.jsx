@@ -1,39 +1,21 @@
 import React from "react";
-import { useQuery } from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query"; // Import necessary React Query components
+import PostsComponent from "./PostsComponent"; // Import your PostsComponent
 
-const fetchPosts = async () => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
-  return response.json();
-};
+// Create a query client
+const queryClient = new QueryClient();
 
-function PostsComponent() {
-  const { data, error, isLoading, isError, refetch } = useQuery(
-    "posts",
-    fetchPosts
-  );
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error: {error.message}</div>;
-  }
-
+function App() {
   return (
-    <div>
-      <h1>Posts</h1>
-      <button onClick={refetch}>Refetch Data</button>
-      <ul>
-        {data.map((post) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
-      </ul>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      {" "}
+      {/* Provide the queryClient to your app */}
+      <div className="App">
+        <h1>Welcome to React Query Demo</h1>
+        <PostsComponent /> {/* The component where you fetch posts */}
+      </div>
+    </QueryClientProvider>
   );
 }
 
-export default PostsComponent;
+export default App;
