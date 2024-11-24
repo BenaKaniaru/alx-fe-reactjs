@@ -1,29 +1,30 @@
 import { create } from "zustand";
 
 const useRecipeStore = create((set) => ({
-  recipes: [
-    // Example recipes to test filtering
-    {
-      id: 1,
-      title: "Spaghetti Bolognese",
-      ingredients: ["pasta", "meat", "tomato"],
-      time: 30,
-    },
-    {
-      id: 2,
-      title: "Chicken Curry",
-      ingredients: ["chicken", "curry powder", "rice"],
-      time: 45,
-    },
-    {
-      id: 3,
-      title: "Vegetable Stir Fry",
-      ingredients: ["vegetables", "soy sauce", "noodles"],
-      time: 20,
-    },
-  ],
+  recipes: [], //list of all recipes
+  favorites: [], // array to store favorite recipe IDs
   searchTerm: "",
   filteredRecipes: [],
+  addFavorite: (recipeId) =>
+    set((state) => ({
+      favorites: state.favorites.includes(recipeId)
+        ? state.favorites
+        : [...state.favorites, recipeId],
+    })),
+
+  removeFavorite: (recipeId) =>
+    set((state) => ({
+      favorites: state.favorites.filter((id) => id !== recipeId),
+    })),
+
+  recommendations: [],
+  generateRecommendations: () =>
+    set((state) => {
+      const recommended = state.recipes.filter(
+        (recipe) => !state.favorites.includes(recipe.id) && Math.random() > 0.5
+      );
+      return { recommendations: recommended };
+    }),
   addRecipe: (newRecipe) =>
     set((state) => ({ recipes: [...state.recipes, newRecipe] })),
   setRecipes: (newRecipes) => ({ recipes: newRecipes }),
