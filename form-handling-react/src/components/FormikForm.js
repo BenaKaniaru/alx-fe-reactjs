@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-const FormikForm = () => {
+const formikForm = () => {
   const initialValues = { username: "", email: "", password: "" };
 
   const validationSchema = Yup.object({
@@ -45,4 +45,4 @@ const FormikForm = () => {
   );
 };
 
-export default FormikForm;
+export default formikForm;
