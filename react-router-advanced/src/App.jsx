@@ -1,6 +1,9 @@
+// src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
 import Profile from "./components/Profile";
+import BlogPost from "./components/BlogPost";
 import Post from "./components/Post";
 
 const App = () => {
@@ -10,11 +13,11 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/profile/*" element={<Profile />} />
         <Route path="/post/:id" element={<Post />} />
+        <Route path="/blog/:id" element={<BlogPost />} />{" "}
+        {/* Add BlogPost Route */}
       </Routes>
     </Router>
   );
 };
-
-const Home = () => <h2>Home Page</h2>;
 
 export default App;
