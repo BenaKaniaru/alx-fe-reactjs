@@ -2,7 +2,12 @@
 import React from "react";
 
 const ProfileDetails = () => {
-  return <h3>Profile Details Page</h3>;
+  return (
+    <div>
+      <h3>Profile Details Page</h3>
+      <p>Here are the details of your profile.</p>
+    </div>
+  );
 };
 
 export default ProfileDetails;
