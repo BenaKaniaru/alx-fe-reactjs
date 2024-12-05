@@ -1,6 +1,6 @@
 export default function UserProfile() {
   return (
-    <div className="bg-gray-100 p-6 sm:p-4 md:p-8 md:max-w-sm sm:max-w-sm mx-auto my-10 md:my-20 rounded-lg shadow-lg">
+    <div className="bg-gray-100 p-6 sm:p-4 md:p-8 md:max-w-sm sm:max-w-xs mx-auto my-10 md:my-20 rounded-lg shadow-lg">
       <img
         className="rounded-full w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 mx-auto"
         src="https://via.placeholder.com/150"
