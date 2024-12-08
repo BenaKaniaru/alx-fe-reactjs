@@ -3,60 +3,40 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": [
+      "200g spaghetti",
+      "2 large eggs",
+      "100g parmesan cheese",
+      "100g pancetta",
+      "Black pepper"
+    ],
+    "instructions": [
+      "Cook spaghetti according to package instructions.",
+      "Whisk eggs and cheese in a bowl.",
+      "Fry pancetta until crispy.",
+      "Combine spaghetti with pancetta and egg mixture.",
+      "Season with black pepper and serve."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato-based gravy.",
-    "image": "https://via.placeholder.com/150"
-  },
-  {
-    "id": 3,
-    "title": "Vegetable Stir-Fry",
-    "summary": "A quick and healthy stir-fry with a mix of fresh vegetables and soy sauce.",
-    "image": "https://via.placeholder.com/150"
-  },
-  {
-    "id": 4,
-    "title": "Beef Stroganoff",
-    "summary": "A rich and creamy dish made with sautéed beef and mushrooms in a sour cream sauce.",
-    "image": "https://via.placeholder.com/150"
-  },
-  {
-    "id": 5,
-    "title": "Margherita Pizza",
-    "summary": "A simple yet delicious pizza topped with fresh tomatoes, mozzarella, and basil.",
-    "image": "https://via.placeholder.com/150"
-  },
-  {
-    "id": 6,
-    "title": "Caesar Salad",
-    "summary": "A classic salad with romaine lettuce, croutons, and Caesar dressing topped with parmesan cheese.",
-    "image": "https://via.placeholder.com/150"
-  },
-  {
-    "id": 7,
-    "title": "Pancakes",
-    "summary": "Fluffy pancakes served with syrup and your choice of toppings.",
-    "image": "https://via.placeholder.com/150"
-  },
-  {
-    "id": 8,
-    "title": "Butter Chicken",
-    "summary": "A popular Indian curry dish made with tender chicken pieces in a creamy tomato-based sauce.",
-    "image": "https://via.placeholder.com/150"
-  },
-  {
-    "id": 9,
-    "title": "Grilled Salmon",
-    "summary": "A healthy dish featuring salmon fillets grilled to perfection with lemon and herbs.",
-    "image": "https://via.placeholder.com/150"
-  },
-  {
-    "id": 10,
-    "title": "Chocolate Cake",
-    "summary": "A decadent dessert with layers of rich chocolate cake and creamy frosting.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": [
+      "500g chicken breast",
+      "1 cup yogurt",
+      "2 tbsp tikka masala spice",
+      "1 cup tomato puree",
+      "1/2 cup cream"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt and spices for 4 hours.",
+      "Grill chicken until cooked.",
+      "Prepare sauce with tomato puree and cream.",
+      "Add chicken to sauce and simmer.",
+      "Serve with rice or naan."
+    ]
   }
 ]

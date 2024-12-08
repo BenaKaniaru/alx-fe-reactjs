@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import recipeData from "../data.json";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   const [recipes, setRecipes] = useState([]);
+  const [recipeId, setRecipeId] = useState();
   useEffect(() => {
     setRecipes(recipeData);
   }, []);
@@ -12,11 +14,11 @@ export default function HomePage() {
       {recipes.map((recipe) => (
         <div
           key={recipe.id}
-          className="bg-gray-50 shadow-gray-500 shadow-md rounded "
+          className="bg-gray-50 shadow-gray-500 shadow-md rounded border-none "
         >
           <img src={recipe.image} className="w-full rounded" alt="" />
           <div className="h-20">
-            <div className="font-bold font-serif ml-2 text-xl">
+            <div className="font-bold font-serif ml-2 sm:text-xs md:text-sm lg:text-base">
               {recipe.title}
             </div>
             <div className="text-base font-light italic ml-2 ">
@@ -24,15 +26,17 @@ export default function HomePage() {
             </div>
           </div>
           <div className="grid place-items-center">
-            <button
-              className="bg-orange-400 rounded-md py-1 hover:bg-orange-300 px-2 mx-auto my-6"
-              onClick={() => {
-                setRecipeId(recipe.id);
-                console.log(recipeId);
-              }}
-            >
-              Recipe Details
-            </button>
+            <Link to={`/recipe/${recipe.id}`}>
+              <button
+                className="bg-orange-400 rounded-md py-1 hover:bg-orange-300 px-2 mx-auto my-6"
+                onClick={() => {
+                  setRecipeId(recipe.id);
+                  console.log(recipe.id);
+                }}
+              >
+                Recipe Details
+              </button>
+            </Link>
           </div>
         </div>
       ))}

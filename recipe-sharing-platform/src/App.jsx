@@ -1,13 +1,20 @@
-import { useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import Nav from "./components/nav";
+import RecipeDetail from "./components/RecipeDetail";
+import AddRecipeForm from "./AddRecipeForm";
 
 function App() {
   return (
-    <div>
+    <Router>
       <Nav />
-      <HomePage />
-    </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/recipe/:id" element={<RecipeDetail />} />
+        <Route path="/add-recipe" element={<AddRecipeForm />} />
+      </Routes>
+    </Router>
   );
 }
 
