@@ -8,10 +8,14 @@ export default function AddRecipeForm() {
   });
   const [error, setError] = useState("");
 
-  const handleChange = (e) => {
+  function handleChange(e) {
+    setFormData(e.target.value);
+  }
+
+  /*const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-  };
+  };*/
 
   const handleSubmit = (e) => {
     e.preventDefault();
