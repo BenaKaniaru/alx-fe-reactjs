@@ -8,10 +8,6 @@ export default function AddRecipeForm() {
   });
   const [error, setError] = useState("");
 
-  function handleChange(e) {
-    setFormData(e.target.value);
-  }
-
   /*const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -62,7 +58,9 @@ export default function AddRecipeForm() {
             id="title"
             name="title"
             value={formData.title}
-            onChange={handleChange}
+            onChange={(e) =>
+              setFormData({ ...formData, title: e.target.value })
+            }
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
           />
         </div>
@@ -77,7 +75,9 @@ export default function AddRecipeForm() {
             id="ingredients"
             name="ingredients"
             value={formData.ingredients}
-            onChange={handleChange}
+            onChange={(e) =>
+              setFormData({ ...formData, ingredients: e.target.value })
+            }
             rows="3"
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
           />
@@ -93,7 +93,9 @@ export default function AddRecipeForm() {
             id="steps"
             name="steps"
             value={formData.steps}
-            onChange={handleChange}
+            onChange={(e) =>
+              setFormData({ ...formData, steps: e.target.value })
+            }
             rows="4"
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
           />
