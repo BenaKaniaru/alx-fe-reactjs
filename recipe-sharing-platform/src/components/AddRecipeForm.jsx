@@ -8,16 +8,36 @@ export default function AddRecipeForm() {
   });
   const [error, setError] = useState("");
 
-  /*const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };*/
+  function validate() {
+    if (
+      !formData.title.trim() ||
+      !formData.ingredients.trim() ||
+      !formData.steps
+    ) {
+      setError("All fields are required");
+      return;
+    }
+
+    if (formData.ingredients.split(",").length < 2) {
+      setError("Please add at least two ingredients");
+      return;
+    }
+
+    setError("");
+
+    setFormData({
+      title: "",
+      ingredients: "",
+      steps: "",
+    });
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    validate();
 
     // Simple validation
-    if (!formData.title || !formData.ingredients || !formData.steps) {
+    /*if (!formData.title || !formData.ingredients || !formData.steps) {
       setError("All fields are required.");
       return;
     }
@@ -35,7 +55,7 @@ export default function AddRecipeForm() {
       title: "",
       ingredients: "",
       steps: "",
-    });
+    });*/
   };
 
   return (
@@ -45,7 +65,7 @@ export default function AddRecipeForm() {
         className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg"
         onSubmit={handleSubmit}
       >
-        {error && <div className="text-red-500 mb-4">{error}</div>}
+        {<div className="text-red-500 mb-4">{error}</div>}
         <div className="mb-4">
           <label
             htmlFor="title"
