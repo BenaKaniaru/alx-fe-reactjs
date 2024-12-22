@@ -16,9 +16,9 @@ export default function Search() {
 
     try {
       const userData = await fetchUserData(username);
-      setUser(userData);
+      setUser(userData || []);
     } catch (err) {
-      setError("Looks like we can’t find the user.");
+      setError("Looks like we cant find the user.");
     } finally {
       setLoading(false);
     }
@@ -75,15 +75,34 @@ export default function Search() {
 
       {loading && <p>Loading...</p>}
       {error && <p>Looks like we cant find the user</p>}
-      {user && (
-        <div>
-          <img src={user.avatar_url} alt={`${user.login} avatar`} width="100" />
-          <h2>{user.name || user.login}</h2>
-          <a href={user.html_url} target="_blank" rel="noopener noreferrer">
-            View GitHub Profile
-          </a>
+      {searchResults.length > 0 ? (
+                <div className="mt-4">
+                    {searchResults.map((user) => (
+                        <div key={user.id} className="border rounded p-4 mb-4 shadow">
+                            <img
+                                src={user.avatar_url}
+                                alt={`${user.login}'s avatar`}
+                                className="w-16 h-16 rounded-full mb-2"
+                            />
+                            <p>Name: {user.login}</p>
+                            <p>Location: {user.location || "Not specified"}</p>
+                            <p>Repositories: {user.public_repos}</p>
+                            <a
+                                href={user.html_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-500 underline"
+                            >
+                                View Profile
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                !loading && !error && <p>No users found.</p>
+            )}
         </div>
-      )}
-    </div>
+    );
+};
   );
 }
